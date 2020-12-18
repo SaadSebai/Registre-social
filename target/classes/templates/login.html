@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <style>
+   		nav {
+   			margin-bottom: 20px;
+   		}
+        nav .badge{
+            position: relative;
+            top: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+	<nav class="nav-wrapper indigo">
+        <div class="container">
+            <a href="#" class="brand-logo">Page Logo</a>
+            <a href="#" class="sidenav-trigger" data-target="mobile-links">
+                <i class="material-icons">menu</i>
+            </a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="/showLogin">Log-In</a></li>
+                <li><a href="/showSignup">SignUp</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+	<div class="container">
+	    <div class="row">
+		    <form th:action="@{/login}" th:object="${employee}" method="post" class="col s6 push-s3" style="margin: 30px">
+			    <div class="card-panel">
+				    <div class="row">
+				      <div class="input-field col s12">
+				        <input id="email" type="email" th:field="*{email}" class="validate" required="required">
+				        <label for="email">Email</label>
+				        </div>
+				    </div>
+				    <div class="row">
+				      <div class="input-field col s12">
+				        <input id="password" type="password" th:field="*{password}" class="validate" required="required">
+				        <label for="password">Password</label>
+				      </div>
+				    </div>
+				    <center>
+				    	<button type="submit" class="btn waves-effect waves-light indigo" >Log-in
+				    		<i class="material-icons right">login</i>
+				    	</button>
+				    </center>
+				</div>
+		    </form>
+	  </div>
+	</div>
+    
+</body>
+</html>
