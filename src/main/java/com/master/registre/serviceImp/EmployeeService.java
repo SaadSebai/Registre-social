@@ -15,6 +15,7 @@ import com.master.registre.isevice.IService;
 @Transactional
 public class EmployeeService implements IDao<Employee> {
 
+	
 	private IService service;
 	
 	@Autowired
